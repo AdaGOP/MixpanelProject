@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buy Biography View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="BuyBiographyViewController" customModule="MixpanelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7hn-xv-pLc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" id="FGs-W5-sOb">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FGs-W5-sOb" id="aYV-P6-U7d">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfp-4U-Gqf">
+                                <rect key="frame" x="37" y="778" width="340" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gEu-Jt-QUP"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Checkout"/>
+                                <connections>
+                                    <action selector="checkoutNow:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1og-1u-3UC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kfp-4U-Gqf" secondAttribute="trailing" constant="37" id="KNy-hN-pQu"/>
+                            <constraint firstItem="7hn-xv-pLc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Z8s-fT-hNL"/>
+                            <constraint firstItem="kfp-4U-Gqf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="37" id="at2-OH-CLF"/>
+                            <constraint firstItem="kfp-4U-Gqf" firstAttribute="top" secondItem="7hn-xv-pLc" secondAttribute="bottom" constant="12" id="e30-rq-EZR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kfp-4U-Gqf" secondAttribute="bottom" constant="34" id="flu-Wu-I4y"/>
+                            <constraint firstItem="7hn-xv-pLc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gVR-Ig-03G"/>
+                            <constraint firstItem="7hn-xv-pLc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jVA-wz-fvs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookTable" destination="7hn-xv-pLc" id="hMs-0i-7oH"/>
+                        <outlet property="checkoutButton" destination="kfp-4U-Gqf" id="SXs-z2-Bdd"/>
+                        <segue destination="2Mr-eQ-b8V" kind="show" identifier="payNow" id="8Yc-h1-3X7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="134.59821428571428"/>
+        </scene>
+        <!--Payment-->
+        <scene sceneID="SeT-SC-wvt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Payment" id="2Mr-eQ-b8V" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7SS-ZK-8Uy"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwj-1U-Ouh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="552"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

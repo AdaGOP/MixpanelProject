@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hqn-pK-cNC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Inspiring Women-->
+        <scene sceneID="2sf-wQ-Qky">
+            <objects>
+                <viewController id="1O9-7e-ltg" customClass="AllListViewController" customModule="MixpanelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8oB-o9-Nzt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPR-ts-hTo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="womenData" id="2ey-3a-WJ1" customClass="WomanTableViewCell" customModule="MixpanelProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ey-3a-WJ1" id="KZe-8x-9ep">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="77p-01-bQF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="77p-01-bQF" firstAttribute="bottom" secondItem="nPR-ts-hTo" secondAttribute="bottom" id="Ho1-Pc-7gs"/>
+                            <constraint firstItem="nPR-ts-hTo" firstAttribute="leading" secondItem="77p-01-bQF" secondAttribute="leading" id="Mzx-PU-agb"/>
+                            <constraint firstItem="nPR-ts-hTo" firstAttribute="top" secondItem="77p-01-bQF" secondAttribute="top" id="egm-4V-uQM"/>
+                            <constraint firstItem="77p-01-bQF" firstAttribute="trailing" secondItem="nPR-ts-hTo" secondAttribute="trailing" id="mfj-pf-Cog"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Inspiring Women" image="list.bullet" catalog="system" id="rm4-rZ-jTc"/>
+                    <navigationItem key="navigationItem" title="Inspiring Women" id="hbl-iD-5xY"/>
+                    <connections>
+                        <outlet property="inspiringTable" destination="nPR-ts-hTo" id="2E3-1u-Qi0"/>
+                        <segue destination="tf0-bf-UXQ" kind="show" identifier="moveToDetail" id="P29-tE-ury"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aY-OV-zGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3738" y="-423"/>
+        </scene>
+        <!--DetailWomen-->
+        <scene sceneID="AgC-8Q-ntG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailWomen" id="tf0-bf-UXQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HCs-ln-d4d"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bv-0F-KEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4399" y="-423"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="ptj-fJ-5hB">
+            <objects>
+                <viewController id="5Zr-5k-im5" customClass="FavouriteViewController" customModule="MixpanelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e0v-cP-nXB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vrc-Gh-8eT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Favourites" image="star.fill" catalog="system" id="4Vc-EF-4cW"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="E0U-c1-cVP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nx4-mW-PwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3738" y="342"/>
+        </scene>
+        <!--All list-->
+        <scene sceneID="1Nl-cl-A1E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hqn-pK-cNC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All list" image="list.bullet" catalog="system" id="BDv-6e-viD">
+                        <imageReference key="selectedImage" image="list.bullet" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5L8-D3-2bk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fUP-GJ-G86" kind="relationship" relationship="rootViewController" id="Y9E-gA-vxN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cca-xz-zgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601.449275362319" y="-86.383928571428569"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kHM-Sc-QN1">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fUP-GJ-G86" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Bd2-Nu-Sdc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ala-5T-ERK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1O9-7e-ltg" kind="relationship" relationship="viewControllers" id="zX7-HX-ufk"/>
+                        <segue destination="5Zr-5k-im5" kind="relationship" relationship="viewControllers" id="WdV-sf-Xfe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mC0-Hu-Q90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689.8550724637685" y="-86.383928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shippingCell" rowHeight="266" id="KGk-i7-Jjw" customClass="ShippingTableViewCell" customModule="MixpanelProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="266"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="266"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buyer Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nft-qI-DrD">
+                        <rect key="frame" x="20" y="19" width="298" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="jsx-FR-O6i"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indra 08562888212 sinyo.23@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taz-tM-gax">
+                        <rect key="frame" x="20" y="42" width="298" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="81" id="9jR-Hq-5pE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jl-g6-oAj">
+                        <rect key="frame" x="20" y="131" width="278" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2kt-Ha-32R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRU-uT-Xit">
+                        <rect key="frame" x="20" y="160" width="298" height="82"/>
+                        <string key="text">Visana at The Savia L7/6 Ciater,
+BSD City, Serpong, 
+Tangerang Selatan, Banten
+15310</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="taz-tM-gax" firstAttribute="top" secondItem="Nft-qI-DrD" secondAttribute="bottom" constant="2" id="1Ve-6w-dGw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9jl-g6-oAj" secondAttribute="trailing" constant="20" id="6cQ-70-G2w"/>
+                    <constraint firstItem="Nft-qI-DrD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7x3-QV-vkJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Nft-qI-DrD" secondAttribute="trailing" constant="20" id="Dvq-uu-uVv"/>
+                    <constraint firstItem="Nft-qI-DrD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="E1H-Ej-x1e"/>
+                    <constraint firstItem="qRU-uT-Xit" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="H4X-Eg-9Pi"/>
+                    <constraint firstAttribute="trailing" secondItem="qRU-uT-Xit" secondAttribute="trailing" constant="20" id="P9D-gG-Txq"/>
+                    <constraint firstItem="taz-tM-gax" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="V17-n1-fpc"/>
+                    <constraint firstItem="9jl-g6-oAj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kRW-dE-EWb"/>
+                    <constraint firstItem="9jl-g6-oAj" firstAttribute="top" secondItem="taz-tM-gax" secondAttribute="bottom" constant="8" id="oHr-mF-hNE"/>
+                    <constraint firstItem="qRU-uT-Xit" firstAttribute="top" secondItem="9jl-g6-oAj" secondAttribute="bottom" constant="8" id="pLU-ve-ztS"/>
+                    <constraint firstAttribute="bottom" secondItem="qRU-uT-Xit" secondAttribute="bottom" constant="24" id="tfr-48-cHO"/>
+                    <constraint firstAttribute="trailing" secondItem="taz-tM-gax" secondAttribute="trailing" constant="20" id="z1F-rd-UyD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="150.72463768115944" y="211.60714285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

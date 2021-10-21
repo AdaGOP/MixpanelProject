@@ -1,0 +1,27 @@
+//
+//  TableViewCell.swift
+//  MixpanelProject
+//
+//  Created by khoirunnisa' rizky noor fatimah on 12/10/21.
+//
+
+import UIKit
+
+class WomanTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var imagePreview: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var shortDescLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}
