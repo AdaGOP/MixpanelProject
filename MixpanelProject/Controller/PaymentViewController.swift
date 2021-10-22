@@ -20,7 +20,7 @@ class PaymentViewController: UIViewController {
     var bookIndeks = 0
     let methods = ["Gopay", "OVO", "DANA"]
     var choosenMethod = ""
-   
+    
     var shippingPrice = 15000
     
     var cell = PaymentMethodTableViewCell()
@@ -45,7 +45,6 @@ class PaymentViewController: UIViewController {
             self.performSegue(withIdentifier: "doUnwind", sender: self)
         }
         alertController.addAction(okAction)
-//        alertController.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -55,7 +54,12 @@ class PaymentViewController: UIViewController {
     }
     
     func calculateBookPrice() -> Int {
-        return (bookOrder[bookIndeks].bookQuantity * bookOrder[bookIndeks].bookPrice)
+        var bookPriceByQuantity = 0
+        
+        for bookIndeks in 0 ..< bookOrder.count {
+            bookPriceByQuantity += (bookOrder[bookIndeks].bookQuantity * bookOrder[bookIndeks].bookPrice)
+        }
+        return bookPriceByQuantity
     }
     
     func calculateTotalPrice() -> Int {
@@ -65,7 +69,7 @@ class PaymentViewController: UIViewController {
 
 extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -77,6 +81,8 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             sectionTitle = "Order Details"
         case 2:
+            sectionTitle = "Price Details"
+        case 3:
             sectionTitle = "Payment Methods (choose one)"
         default:
             break
@@ -92,8 +98,10 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             rowNumber = 1
         case 1:
-            rowNumber = bookOrder.count + 1
+            rowNumber = bookOrder.count
         case 2:
+            rowNumber = 1
+        case 3:
             rowNumber = 3
         default:
             break
@@ -108,28 +116,24 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             cell = tableView.dequeueReusableCell(withIdentifier: "shippingCell") as! ShippingTableViewCell
         case 1:
-            if indexPath.row == 0 {
-                let bookCell = tableView.dequeueReusableCell(withIdentifier: "bookCell") as! BookTableViewCell
-                bookCell.isChecked = bookOrder[indexPath.row].isChecked
-                bookCell.bookStepper.value = Double(bookOrder[indexPath.row].bookQuantity)
-                bookCell.bookQuantity.text = "\(bookOrder[indexPath.row].bookQuantity)"
-                bookCell.bookImageCover.image = bookOrder[indexPath.row].bookImageCover
-                bookCell.bookTitle.text = bookOrder[indexPath.row].bookTitle
-                bookCell.bookPrice.text = "\(bookOrder[indexPath.row].bookPrice)"
-                bookCell.setUpView()
-                bookCell.delegate = self
-                cell = bookCell
-                
-            } else if indexPath.row == 1 {
-                let orderCell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as! OrderTableViewCell
-                orderCell.priceBookTotal.text = "Rp " + "\(calculateBookPrice())"
-                orderCell.shippingPrice.text = "Rp " + "\(shippingPrice)"
-                orderCell.priceTotal.text = "Rp " +  "\(calculateTotalPrice())"
-                self.orderCell = orderCell
-                cell = orderCell
-            }
-            
+            let bookCell = tableView.dequeueReusableCell(withIdentifier: "bookCell") as! BookTableViewCell
+            bookCell.isChecked = bookOrder[indexPath.row].isChecked
+            bookCell.bookStepper.value = Double(bookOrder[indexPath.row].bookQuantity)
+            bookCell.bookQuantity.text = "\(bookOrder[indexPath.row].bookQuantity)"
+            bookCell.bookImageCover.image = bookOrder[indexPath.row].bookImageCover
+            bookCell.bookTitle.text = bookOrder[indexPath.row].bookTitle
+            bookCell.bookPrice.text = "\(bookOrder[indexPath.row].bookPrice)"
+            bookCell.setUpView()
+            bookCell.delegate = self
+            cell = bookCell
         case 2:
+            let orderCell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as! OrderTableViewCell
+            orderCell.priceBookTotal.text = "Rp " + "\(calculateBookPrice())"
+            orderCell.shippingPrice.text = "Rp " + "\(shippingPrice)"
+            orderCell.priceTotal.text = "Rp " +  "\(calculateTotalPrice())"
+            self.orderCell = orderCell
+            cell = orderCell
+        case 3:
             let methodCell = tableView.dequeueReusableCell(withIdentifier: "methodCell") as! PaymentMethodTableViewCell
             methodCell.methodName.text = methods[indexPath.row]
             methodCell.delegate = self
@@ -146,9 +150,9 @@ extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0 :
             height = 266
-        case 1:
+        case 1, 2:
             height = 146
-        case 2:
+        case 3:
             height = 50
         default:
             break
@@ -176,7 +180,7 @@ extension PaymentViewController: PaymentMethodTableViewCellDelegate, BookTableVi
         bookOrder[bookIndeks].bookQuantity = cell.quantity
         setUpPriceView()
     }
-
+    
     func unCheckButton(for cell: PaymentMethodTableViewCell) {
         if let choosenButton = self.cell.choosenButton {
             choosenButton.setImage(UIImage(systemName: "square"), for: .normal)
