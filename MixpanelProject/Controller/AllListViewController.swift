@@ -26,7 +26,6 @@ class AllListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.navigationItem.title = "Inspiring Women"
-
     }
     
     @IBAction func doUnwind(segue: UIStoryboardSegue) {}

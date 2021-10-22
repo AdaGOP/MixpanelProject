@@ -29,9 +29,7 @@ class DetailWomenViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    @IBAction func changeFavorite(_ sender: UIButton) {
-        isFavorite = !isFavorite
-        inspiringWomenData[indeks].isFavorite = isFavorite
+    func changeFavorite() {
         
         if isFavorite {
             favoriteButton.setTitle("Favourited", for: .normal)
@@ -39,8 +37,13 @@ class DetailWomenViewController: UIViewController {
         } else if !isFavorite {
             favoriteButton.setTitle("Add to Favourite", for: .normal)
         }
-        
     }
+    @IBAction func changeFavorite(_ sender: UIButton) {
+        isFavorite = !isFavorite
+        inspiringWomenData[indeks].isFavorite = isFavorite
+        changeFavorite()
+    }
+    
     @IBAction func buyBiography(_ sender: UIButton) {
         performSegue(withIdentifier: "buyBiography", sender: nil)
     }

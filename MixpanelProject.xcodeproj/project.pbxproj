@@ -32,6 +32,7 @@
 		4E5046982715DEB100D60BF4 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5046962715DEB100D60BF4 /* TableViewCell.xib */; };
 		4E50469A2715E4BC00D60BF4 /* DetailWomen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5046992715E4BC00D60BF4 /* DetailWomen.storyboard */; };
 		4E50469E2715E4EE00D60BF4 /* DetailWomenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E50469D2715E4EE00D60BF4 /* DetailWomenViewController.swift */; };
+		CFEF9E0492D620E317F877BC /* Pods_MixpanelProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8889BE1739F434CFF0DC83BD /* Pods_MixpanelProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,9 @@
 		4E5046962715DEB100D60BF4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		4E5046992715E4BC00D60BF4 /* DetailWomen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailWomen.storyboard; sourceTree = "<group>"; };
 		4E50469D2715E4EE00D60BF4 /* DetailWomenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWomenViewController.swift; sourceTree = "<group>"; };
+		523BA51F711FC08E8E70FE52 /* Pods-MixpanelProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixpanelProject.release.xcconfig"; path = "Target Support Files/Pods-MixpanelProject/Pods-MixpanelProject.release.xcconfig"; sourceTree = "<group>"; };
+		7827A6BCB0CCD0F347FD0B28 /* Pods-MixpanelProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixpanelProject.debug.xcconfig"; path = "Target Support Files/Pods-MixpanelProject/Pods-MixpanelProject.debug.xcconfig"; sourceTree = "<group>"; };
+		8889BE1739F434CFF0DC83BD /* Pods_MixpanelProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixpanelProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEF9E0492D620E317F877BC /* Pods_MixpanelProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46EF5A9AF23C032BB14916B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7827A6BCB0CCD0F347FD0B28 /* Pods-MixpanelProject.debug.xcconfig */,
+				523BA51F711FC08E8E70FE52 /* Pods-MixpanelProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4E1C9F7B2716D59F00A59980 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +119,8 @@
 			children = (
 				4E50466F2715D68600D60BF4 /* MixpanelProject */,
 				4E50466E2715D68600D60BF4 /* Products */,
+				46EF5A9AF23C032BB14916B2 /* Pods */,
+				7FFDD936423455B44E209712 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +181,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7FFDD936423455B44E209712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8889BE1739F434CFF0DC83BD /* Pods_MixpanelProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E5046812715D68700D60BF4 /* Build configuration list for PBXNativeTarget "MixpanelProject" */;
 			buildPhases = (
+				E015E298946CAF1F5B23D2E6 /* [CP] Check Pods Manifest.lock */,
 				4E5046692715D68600D60BF4 /* Sources */,
 				4E50466A2715D68600D60BF4 /* Frameworks */,
 				4E50466B2715D68600D60BF4 /* Resources */,
+				35C316E10B50D70C38B984D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +264,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35C316E10B50D70C38B984D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MixpanelProject/Pods-MixpanelProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MixpanelProject/Pods-MixpanelProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MixpanelProject/Pods-MixpanelProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E015E298946CAF1F5B23D2E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MixpanelProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E5046692715D68600D60BF4 /* Sources */ = {
@@ -400,6 +469,7 @@
 		};
 		4E5046822715D68700D60BF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7827A6BCB0CCD0F347FD0B28 /* Pods-MixpanelProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -428,6 +498,7 @@
 		};
 		4E5046832715D68700D60BF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 523BA51F711FC08E8E70FE52 /* Pods-MixpanelProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
