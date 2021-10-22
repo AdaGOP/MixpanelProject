@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 protocol BookTableViewCellDelegate: AnyObject {
     func controlSomeValue(for cell: BookTableViewCell)
@@ -33,6 +34,10 @@ class BuyBiographyViewController: UIViewController {
     }
     
     @IBAction func checkoutNow(_ sender: UIButton) {
+        Mixpanel.mainInstance().track(event: "checkout_book", properties: ["profile_name": inspiringData[womanDataIndeks].profileName, "platform": "iOS"])
+        for bookIndeks in 0 ..< bookOrder.count {
+            Mixpanel.mainInstance().track(event: "checkout_book", properties: ["ordered_book_name": bookOrder[bookIndeks].bookTitle, "number_of_book": bookOrder[bookIndeks].bookQuantity])
+        }
         if bookOrder.count != 0 {
             performSegue(withIdentifier: "payNow", sender: nil)
         }

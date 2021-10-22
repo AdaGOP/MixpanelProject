@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 protocol PaymentMethodTableViewCellDelegate: AnyObject {
     func toggleSomeValue(for cell: PaymentMethodTableViewCell)
@@ -39,9 +40,11 @@ class PaymentViewController: UIViewController {
     }
     
     @IBAction func payNow(_ sender: UIButton) {
+        Mixpanel.mainInstance().track(event: "pay_now", properties: ["payment_method": choosenMethod, "platform": "iOS"])
         let alertController = UIAlertController(title: "Payment Succeed", message: "Your order is confirmed", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { alertAction in
+            Mixpanel.mainInstance().track(event: "payment_succeed", properties: ["platform": "iOS"])
             self.performSegue(withIdentifier: "doUnwind", sender: self)
         }
         alertController.addAction(okAction)

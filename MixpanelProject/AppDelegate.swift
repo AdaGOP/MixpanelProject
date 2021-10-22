@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import Mixpanel
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    private let token = "f1a80d4c51e5cdead420aca8746f840e"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Mixpanel.initialize(token: token)
+        if let uuid = UserDefaults.standard.string(forKey: "uuid") {
+            Mixpanel.mainInstance().identify(distinctId: uuid)
+            Mixpanel.mainInstance().registerSuperProperties(["uud": uuid])
+            Mixpanel.mainInstance().people.set(properties: ["uuid": uuid])
+        }
         return true
     }
 

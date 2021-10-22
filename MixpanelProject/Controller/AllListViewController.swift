@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class AllListViewController: UIViewController {
     
@@ -49,6 +50,7 @@ extension AllListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indeks = indexPath.row
+        Mixpanel.mainInstance().track(event: "open_detail_profile", properties: ["profile_name": inspiringWomenData[indexPath.row].profileName, "platform": "iOS"])
         performSegue(withIdentifier: "moveToDetail", sender: nil)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class DetailWomenViewController: UIViewController {
     
@@ -42,9 +43,11 @@ class DetailWomenViewController: UIViewController {
         isFavorite = !isFavorite
         inspiringWomenData[indeks].isFavorite = isFavorite
         changeFavorite()
+        Mixpanel.mainInstance().track(event: "add_to_favourite", properties: ["profile_name": inspiringWomenData[indeks].profileName, "platform": "iOS"])
     }
     
     @IBAction func buyBiography(_ sender: UIButton) {
+        Mixpanel.mainInstance().track(event: "buy_biography", properties: ["profile_name": inspiringWomenData[indeks].profileName, "platform": "iOS"])
         performSegue(withIdentifier: "buyBiography", sender: nil)
     }
     
